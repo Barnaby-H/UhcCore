@@ -47,7 +47,7 @@ public class VeinMinerListener extends ScenarioListener{
         Vein vein = new Vein(block);
         vein.process();
 
-        player.getWorld().dropItem(player.getLocation().getBlock().getLocation().add(.5,.5,.5), vein.getDrops(getVeinMultiplier(vein.getDropType())));
+        player.getWorld().dropItem(block.getLocation().getBlock().getLocation().add(.5,.5,.5), vein.getDrops(getVeinMultiplier(vein.getDropType())));
 
         if (vein.getTotalXp() != 0){
             UhcItems.spawnExtraXp(player.getLocation(), vein.getTotalXp());
